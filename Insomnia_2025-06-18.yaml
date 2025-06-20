@@ -196,12 +196,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/api/medicos/8
+      - url: http://localhost:3000/api/medicos/2
         name: MEDICO
         meta:
           id: req_f3601687bf094934993b394e478734b0
           created: 1745514634588
-          modified: 1746447673478
+          modified: 1750369150894
           isPrivate: false
           description: ""
           sortKey: -1745514634588
@@ -323,7 +323,7 @@ collection:
         meta:
           id: req_75af4f540d464b30869c8bbe3dfe5319
           created: 1745843588121
-          modified: 1750122922893
+          modified: 1750311728473
           isPrivate: false
           description: ""
           sortKey: -1745843486557
@@ -338,7 +338,8 @@ collection:
               "observaciones": "Paciente reporta dolor de cabeza desde hace 3 días. Se le recomienda descanso y paracetamol.",
               "codigo_icd": "G44.1",
               "descripcion": "Cefalea tensional",
-              "tratamiento": "Reposo, hidratación, paracetamol 500mg cada 8 horas por 3 días."
+              "tratamiento": "Reposo, hidratación, paracetamol 500mg cada 8 horas por 3 días.",
+            	"fecha_consulta":""
             }
 
         headers:
@@ -357,12 +358,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/api/historial/20
+      - url: http://localhost:3000/api/historial/9
         name: HISTORIAL
         meta:
           id: req_c69fefc003284c418698a35ddeef11c0
           created: 1745844972971
-          modified: 1750085528850
+          modified: 1750378314849
           isPrivate: false
           description: ""
           sortKey: -1745844972971
@@ -478,12 +479,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/api/incapacidades/16
+      - url: http://localhost:3000/api/incapacidades/10
         name: INCAPACIDADMEDICA
         meta:
           id: req_9d6c3de6f53b414e8fabbf4de64cb972
           created: 1745852423339
-          modified: 1746756187900
+          modified: 1750378263907
           isPrivate: false
           description: ""
           sortKey: -1745852423339
@@ -604,12 +605,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/api/autorizacion-medicamentos/24
+      - url: http://localhost:3000/api/autorizacion-medicamentos/10
         name: AUTORIZACIONMEDICAMENTOS
         meta:
           id: req_79751ebc809641a3b142180215f32e11
           created: 1745865553851
-          modified: 1746756157688
+          modified: 1750378126775
           isPrivate: false
           description: ""
           sortKey: -1745865553851
@@ -726,12 +727,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:3000/api/autorizacion-procedimiento-examen/16
+      - url: http://localhost:3000/api/autorizacion-procedimiento-examen/5
         name: AUTORIZACIONPROCEDIMIENTOEXAMEN
         meta:
           id: req_9d2cd6c3156a43f7a274220e4289efcc
           created: 1745943931563
-          modified: 1746756142166
+          modified: 1750378093213
           isPrivate: false
           description: ""
           sortKey: -1745943931563
@@ -833,7 +834,7 @@ collection:
         meta:
           id: req_ebc33aa16f0a436fa4766683b2f9a4ae
           created: 1747501258406
-          modified: 1749329340238
+          modified: 1750306230323
           isPrivate: false
           description: ""
           sortKey: -1747501258406
@@ -870,6 +871,281 @@ collection:
     scripts:
       afterResponse: ""
       preRequest: ""
+  - name: citamedica
+    meta:
+      id: fld_ff553bda37c742569ed2317e82a9d7bc
+      created: 1750259683374
+      modified: 1750289901549
+      sortKey: -1750259683374
+      description: ""
+    children:
+      - url: http://localhost:3000/api/cita-medica
+        name: CITAMEDICA
+        meta:
+          id: req_847e412d93664129a7b9d2ea8fd4e79e
+          created: 1750259686388
+          modified: 1750367504189
+          isPrivate: false
+          description: ""
+          sortKey: -1750259686388
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "id_paciente": 6,
+              "id_medico": 4,
+              "fecha_cita": "2025-06-19T16:00:00",
+              "motivo": "Gripa"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/cita-medica/medico/4
+        name: CITASMEDICASMEDICO
+        meta:
+          id: req_08c6710bf49a442bb8ba65e36bed37f7
+          created: 1750260183407
+          modified: 1750311414351
+          isPrivate: false
+          description: ""
+          sortKey: -1750260183407
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/cita-medica
+        name: CITASMEDICAS
+        meta:
+          id: req_b52b96a5849b4c468df37cd6e901eefb
+          created: 1750260399960
+          modified: 1750290173418
+          isPrivate: false
+          description: ""
+          sortKey: -1750260399960
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/cita-medica/paciente/6
+        name: CITASMEDICASPACIENTE
+        meta:
+          id: req_903b98ded4314019a0d755490dbe201b
+          created: 1750261115257
+          modified: 1750293310284
+          isPrivate: false
+          description: ""
+          sortKey: -1750261115257
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/cita-medica/12
+        name: CITAMEDICA
+        meta:
+          id: req_d3546a8ed93c4226bfefb087d4059cef
+          created: 1750290115550
+          modified: 1750378056999
+          isPrivate: false
+          description: ""
+          sortKey: -1750290115550
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/cita-medica/disponibilidad/1/?fecha=2025-06-19
+        name: DISPONIBILIDAD
+        meta:
+          id: req_a8059e2031264a7a9cef9ffb8dd00a59
+          created: 1750366653596
+          modified: 1750367528278
+          isPrivate: false
+          description: ""
+          sortKey: -1750366653596
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - url: ""
+    name: Paciente
+    meta:
+      id: ws-req_130b5e9fa13146e3a0d387b4d6e759c5
+      created: 1745508162056
+      modified: 1750085369649
+      description: ""
+      sortKey: -1745508162056
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: Medico
+    meta:
+      id: ws-req_6ee2a77744c14bec81844a0d7f5bfa1e
+      created: 1745514584044
+      modified: 1750291643151
+      description: ""
+      sortKey: -1745858038656
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: HistorialConsulta
+    meta:
+      id: ws-req_24ba6ab028584769bd89cd684f2bf070
+      created: 1745843422828
+      modified: 1745853357431
+      description: ""
+      sortKey: -1745843422828
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: IncapacidadMedica
+    meta:
+      id: ws-req_7d34a01a11fc49039328ab3c63f40a89
+      created: 1745852414675
+      modified: 1745852414675
+      description: ""
+      sortKey: -1745852414675
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: AutorizacionMedicamentos
+    meta:
+      id: ws-req_1b583d08d87142bbb52c9b6b2582eec8
+      created: 1745863662637
+      modified: 1749849041441
+      description: ""
+      sortKey: -1745863662637
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: AutorizacionProcedimientoExamen
+    meta:
+      id: ws-req_5248162b2e9f48e2aa521c59621a204f
+      created: 1745943470197
+      modified: 1745943470197
+      description: ""
+      sortKey: -1745943470198
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: Auth
+    meta:
+      id: ws-req_eea59cedc3a4400bb082564ed19d3c7a
+      created: 1746282301801
+      modified: 1748696875776
+      description: ""
+      sortKey: -1746282301801
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+  - url: ""
+    name: IA
+    meta:
+      id: ws-req_a878c51791ff4a0588aa56757514433f
+      created: 1747501255661
+      modified: 1750293190985
+      description: ""
+      sortKey: -1747501255661
+    settings:
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
 cookieJar:
   name: Default Jar
   meta:
