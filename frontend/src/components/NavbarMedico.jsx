@@ -32,7 +32,7 @@ export function NavbarMedico({ isPublic = false }) {
     try {
       const { error } = await client.auth.signOut();
       if (error) throw error;
-      navigate("/menu-medico");
+      navigate("/medical-login");
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
     }
