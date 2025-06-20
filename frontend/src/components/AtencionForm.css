@@ -1,0 +1,254 @@
+/* AtencionForm.css */
+
+.atencion-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+.atencion-header {
+  background: #e0f2fe;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  color: #0369a1;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.atencion-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.atencion-form input,
+.atencion-form select,
+.atencion-form textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #bae6fd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.atencion-form input:focus,
+.atencion-form select:focus,
+.atencion-form textarea:focus {
+  border: 1.5px solid #38bdf8;
+  outline: none;
+  background: #f0f9ff;
+}
+
+.atencion-form button[type="submit"] {
+  width: 100%;
+  background: #06b6d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.atencion-form button[type="submit"]:hover {
+  background: #0ea5e9;
+}
+
+.respuesta-ia-section {
+  margin-top: 2rem;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+}
+
+.respuesta-ia-section label {
+  color: #0369a1;
+  font-weight: 500;
+}
+
+.respuesta-ia-section textarea {
+  background: #e0f2fe;
+  border: 1.5px solid #bae6fd;
+  color: #0f172a;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.respuesta-ia-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.respuesta-ia-buttons button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.respuesta-ia-buttons button:first-child {
+  background: #22c55e;
+  color: #fff;
+}
+
+.respuesta-ia-buttons button:first-child:hover {
+  background: #16a34a;
+}
+
+.respuesta-ia-buttons button:last-child {
+  background: #f87171;
+  color: #fff;
+}
+
+.respuesta-ia-buttons button:last-child:hover {
+  background: #dc2626;
+}
+
+/* Estilos para la respuesta formateada */
+.respuesta-formateada {
+  background: #ffffff;
+  border: 2px solid #e0f2fe;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.1);
+}
+
+.paciente-info {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.paciente-info h3 {
+  color: #0369a1;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.paciente-info p {
+  margin: 0.3rem 0;
+  color: #0f172a;
+}
+
+.diagnostico-section {
+  margin-bottom: 1.5rem;
+}
+
+.diagnostico-section h3 {
+  color: #dc2626;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #fecaca;
+  padding-bottom: 0.5rem;
+}
+
+.condicion {
+  background: #fef2f2;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #dc2626;
+}
+
+.sintomas-list {
+  background: #fffbeb;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.sintomas-list h4 {
+  color: #d97706;
+  margin: 0 0 0.5rem 0;
+}
+
+.sintomas-list ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.sintomas-list li {
+  color: #92400e;
+  margin-bottom: 0.3rem;
+}
+
+.recomendaciones {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.recomendaciones h4 {
+  color: #15803d;
+  margin: 0 0 1rem 0;
+}
+
+.medicamentos {
+  margin-bottom: 1rem;
+}
+
+.medicamento-item {
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.medicamento-nombre {
+  font-weight: 600;
+  color: #059669;
+  font-size: 1.1rem;
+}
+
+.medicamento-detalles {
+  color: #047857;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.incapacidad {
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+  border-radius: 6px;
+  padding: 0.8rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.fecha-diagnostico {
+  text-align: right;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.error-json {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #dc2626;
+}

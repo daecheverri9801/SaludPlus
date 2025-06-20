@@ -1,0 +1,202 @@
+/* RemisionForm.css */
+.remision-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.remision-header {
+  background: #e0f2fe;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  color: #0369a1;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Tabs Navigation */
+.tabs-navigation {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 0;
+  overflow-x: auto;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.tab-button.active {
+  color: #0369a1;
+  background: #f0f9ff;
+  border-bottom-color: #0ea5e9;
+}
+
+.tab-button:hover:not(.active) {
+  background: #f8fafc;
+  color: #475569;
+}
+
+/* Tab Content */
+.tab-content {
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Form Styles */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid #bae6fd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #38bdf8;
+  outline: none;
+  background: #f0f9ff;
+}
+
+.form-group input:read-only {
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Medicamentos y Examenes Lists */
+.medicamento-item,
+.examen-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.medicamento-header,
+.examen-header {
+  color: #0369a1;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.add-button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.add-button:hover {
+  background: #16a34a;
+}
+
+.remove-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  float: right;
+}
+
+.remove-button:hover {
+  background: #dc2626;
+}
+
+/* Submit Button */
+.submit-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+  text-align: center;
+}
+
+.submit-button {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: #0284c7;
+}
+
+.submit-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}

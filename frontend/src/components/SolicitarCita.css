@@ -1,0 +1,79 @@
+.solicitar-cita-bg {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+.solicitar-cita-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+.solicitar-cita-form .form-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.solicitar-cita-bottom {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.calendario-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.horas-disponibles-container {
+  flex: 2;
+}
+
+.horas-disponibles-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.horas-disponibles-container th,
+.horas-disponibles-container td {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.horas-disponibles-container th {
+  background: #e0f2fe;
+}
+
+.horas-disponibles-container button {
+  background: #0369a1;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.horas-disponibles-container button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}

@@ -1,0 +1,885 @@
+type: collection.insomnia.rest/5.0
+name: ENDPOINTS
+meta:
+  id: wrk_cc0d35723a36489b9da1bf144c7ce352
+  created: 1750121682929
+  modified: 1750121682929
+  description: ""
+collection:
+  - name: Paciente
+    meta:
+      id: fld_9b4b6dd9ea1b4bed85561d4ae8a5f593
+      created: 1745508162056
+      modified: 1750085369649
+      sortKey: -1745508162056
+      description: ""
+    children:
+      - url: http://localhost:3000/api/pacientes/6
+        name: PACIENTE
+        meta:
+          id: req_8eb6dc1252d942fba8829eddf804f94b
+          created: 1745509709181
+          modified: 1750133135751
+          isPrivate: false
+          description: ""
+          sortKey: -1745509709181
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/pacientes
+        name: PACIENTES
+        meta:
+          id: req_063e55be4de64a75bca75403ec7b8b05
+          created: 1745509741238
+          modified: 1745509781655
+          isPrivate: false
+          description: ""
+          sortKey: -1745509741238
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/pacientes/35
+        name: PACIENTE
+        meta:
+          id: req_9453c26a17b4449f8f16a9badcae3860
+          created: 1745509854774
+          modified: 1750085355223
+          isPrivate: false
+          description: ""
+          sortKey: -1745509741338
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/pacientes
+        name: PACIENTE
+        meta:
+          id: req_a53c3811afb34030a334f9716b5bde5d
+          created: 1745512855577
+          modified: 1750085444109
+          isPrivate: false
+          description: ""
+          sortKey: -1745512855577
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "usuario": "mauricioO",
+              "contraseña": "mauricio1234",
+              "nombre": "mauricio alzate ocampo",
+              "cedula": "1234567890",
+              "correo_electronico": "mauro10493gmail.com",
+              "fecha_registro": "2025-06-03T11:45:00Z",
+              "idauth": "auth0|marco789132",
+            	"celular": "1234536789",
+            	"direccion": "cra 1"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/pacientes/6
+        name: "PACIENTE "
+        meta:
+          id: req_ae8e7e78a2584a61a790b3e20e05d262
+          created: 1749335279559
+          modified: 1750133132479
+          isPrivate: false
+          description: ""
+          sortKey: -1745512855677
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "correo_electronico": "mauro10491gmail.com",
+            	"celular": "310000",
+            	"direccion": "cra 2"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: Medico
+    meta:
+      id: fld_661ba2f142614566960cb4224fb35868
+      created: 1745514584044
+      modified: 1745514584044
+      sortKey: -1745514584044
+      description: ""
+    children:
+      - url: http://localhost:3000/api/medicos
+        name: MEDICOS
+        meta:
+          id: req_ee2443e09e59413592107e33bad5d84f
+          created: 1745514586624
+          modified: 1745514646492
+          isPrivate: false
+          description: ""
+          sortKey: -1745514586624
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/medicos/8
+        name: MEDICO
+        meta:
+          id: req_f3601687bf094934993b394e478734b0
+          created: 1745514634588
+          modified: 1746447673478
+          isPrivate: false
+          description: ""
+          sortKey: -1745514634588
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/medicos/8
+        name: MEDICO
+        meta:
+          id: req_d31439696054469ebb3b3c21c3e52f95
+          created: 1745514660854
+          modified: 1750085380690
+          isPrivate: false
+          description: ""
+          sortKey: -1745514660854
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/medicos
+        name: MEDICO
+        meta:
+          id: req_507462899085434f881aa55a05fefff8
+          created: 1745514707098
+          modified: 1750218616292
+          isPrivate: false
+          description: ""
+          sortKey: -1745514707098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            		"nombre": "Daniel Arango",
+            		"especialidad": "Ortopedista",
+            		"registro_medico": "REG-1000",
+            		"correo_electronico": "daniel.arango@clinicamedica.com",
+            		"idauth": "auth0|daniel.arango",
+            		"cedula": "1000000",
+            		"direccion": "Calle 2",
+            		"celular": "3111111111"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: HistorialConsulta
+    meta:
+      id: fld_e27704c1b307439f81f610c3cee0f413
+      created: 1745843422828
+      modified: 1745853357431
+      sortKey: -1745843422828
+      description: ""
+    children:
+      - url: http://localhost:3000/api/historial/6
+        name: HISTORIAL
+        meta:
+          id: req_eb77a1d1bc534b939e772b35ea0aecaf
+          created: 1745843486457
+          modified: 1750192867316
+          isPrivate: false
+          description: ""
+          sortKey: -1745843486457
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/historial
+        name: HISTORIAL
+        meta:
+          id: req_75af4f540d464b30869c8bbe3dfe5319
+          created: 1745843588121
+          modified: 1750122922893
+          isPrivate: false
+          description: ""
+          sortKey: -1745843486557
+        method: POST
+        body:
+          mimeType: application/json
+          text: >+
+            {
+              "idPaciente": 6,
+              "idMedico": 2,
+              "motivo": "Dolor de cabeza persistente",
+              "observaciones": "Paciente reporta dolor de cabeza desde hace 3 días. Se le recomienda descanso y paracetamol.",
+              "codigo_icd": "G44.1",
+              "descripcion": "Cefalea tensional",
+              "tratamiento": "Reposo, hidratación, paracetamol 500mg cada 8 horas por 3 días."
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/historial/20
+        name: HISTORIAL
+        meta:
+          id: req_c69fefc003284c418698a35ddeef11c0
+          created: 1745844972971
+          modified: 1750085528850
+          isPrivate: false
+          description: ""
+          sortKey: -1745844972971
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/historial/6/7
+        name: HISTORIALPORID
+        meta:
+          id: req_f6c465992bc04cc394ae6d07715e04e7
+          created: 1749333836600
+          modified: 1750195577375
+          isPrivate: false
+          description: ""
+          sortKey: -1749333836600
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: IncapacidadMedica
+    meta:
+      id: fld_d2107b0435df47ef90163741f52992ba
+      created: 1745852414675
+      modified: 1745852414675
+      sortKey: -1745852414675
+      description: ""
+    children:
+      - url: http://localhost:3000/api/incapacidades/6
+        name: INCAPACIDADMEDICA
+        meta:
+          id: req_51425a784b824b4d96db0702f0ae846a
+          created: 1745852418346
+          modified: 1750193242390
+          isPrivate: false
+          description: ""
+          sortKey: -1745852418346
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/incapacidades
+        name: INCAPACIDADMEDICA
+        meta:
+          id: req_f1854793d4de41bcb8ba239fbcdc715e
+          created: 1745852421988
+          modified: 1750202148502
+          isPrivate: false
+          description: ""
+          sortKey: -1745852421988
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "idPaciente": 6,
+              "idMedico": 2,
+              "idConsulta": 8,
+              "fechaInicio": "2025-04-30",
+              "fechaFin": "2025-05-14",
+              "diagnostico": "Gripe Amarilla",
+              "recomendaciones": "Descanso absoluto, hidratación, control de fiebre"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/incapacidades/16
+        name: INCAPACIDADMEDICA
+        meta:
+          id: req_9d6c3de6f53b414e8fabbf4de64cb972
+          created: 1745852423339
+          modified: 1746756187900
+          isPrivate: false
+          description: ""
+          sortKey: -1745852423339
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/incapacidades/pdf/1
+        name: PDF
+        meta:
+          id: req_84f350b9422f42559b44df30f3c919e9
+          created: 1745857324507
+          modified: 1750193448884
+          isPrivate: false
+          description: ""
+          sortKey: -1745857324507
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: AutorizacionMedicamentos
+    meta:
+      id: fld_6066ac162f9b4c45b0f6b8fe02fb1cbc
+      created: 1745863662637
+      modified: 1749849041441
+      sortKey: -1745863662637
+      description: ""
+    children:
+      - url: http://localhost:3000/api/autorizacion-medicamentos/6
+        name: AUTORIZACIONMEDICAMENTOS
+        meta:
+          id: req_ffcb96ee71d2418dbfd82f52afc3c932
+          created: 1745863665089
+          modified: 1750214029547
+          isPrivate: false
+          description: ""
+          sortKey: -1745863665089
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-medicamentos
+        name: AUTORIZACIONMEDICAMENTOS
+        meta:
+          id: req_98d75d5d918246c0a0e333bf859b617b
+          created: 1745864042081
+          modified: 1750214615697
+          isPrivate: false
+          description: ""
+          sortKey: -1745864042081
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "id_paciente": 6,
+              "id_medico": 2,
+              "id_consulta": 8,
+              "medicamento": "Amoxicilina 500mg",
+              "dosis": "500mg",
+              "frecuencia": "Cada 12 horas",
+              "duracion": "10 días",
+              "fecha_expiracion": "2025-06-25",
+              "justificacion": "Tratamiento de infección de orina",
+              "estado": "aprobado"
+            }
+
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-medicamentos/24
+        name: AUTORIZACIONMEDICAMENTOS
+        meta:
+          id: req_79751ebc809641a3b142180215f32e11
+          created: 1745865553851
+          modified: 1746756157688
+          isPrivate: false
+          description: ""
+          sortKey: -1745865553851
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-medicamentos/pdf/1
+        name: PDF
+        meta:
+          id: req_94e94a804e2c4d6fb82e7d6abd50bd9f
+          created: 1745868558712
+          modified: 1750214072936
+          isPrivate: false
+          description: ""
+          sortKey: -1745868558712
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: AutorizacionProcedimientoExamen
+    meta:
+      id: fld_a890d751a9194f98a4af9cfba62548c4
+      created: 1745943470197
+      modified: 1745943470197
+      sortKey: -1745943470198
+      description: ""
+    children:
+      - url: http://localhost:3000/api/autorizacion-procedimiento-examen/6
+        name: AUTORIZACIONPROCEDIMIENTOEXAMEN
+        meta:
+          id: req_c5f6872904164e6594a204fabb69f650
+          created: 1745943472181
+          modified: 1750215164123
+          isPrivate: false
+          description: ""
+          sortKey: -1745943472181
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-procedimiento-examen
+        name: AUTORIZACIONPROCEDIMIENTOEXAMEN
+        meta:
+          id: req_8f63d0422b6d48e9bec6baf5a53e9b8a
+          created: 1745943769630
+          modified: 1750215045860
+          isPrivate: false
+          description: ""
+          sortKey: -1745943769630
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "id_paciente": 6,
+              "id_medico": 1,
+              "id_consulta": 7,
+              "tipo": "Examen de sangre",
+              "descripcion": "Requiere hemograma completo por sospecha de anemia.",
+              "fecha_expiracion": "2025-06-30",
+              "instrucciones": "Ayuno de 8 horas antes del examen.",
+              "estado": "pendiente"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-procedimiento-examen/16
+        name: AUTORIZACIONPROCEDIMIENTOEXAMEN
+        meta:
+          id: req_9d2cd6c3156a43f7a274220e4289efcc
+          created: 1745943931563
+          modified: 1746756142166
+          isPrivate: false
+          description: ""
+          sortKey: -1745943931563
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/autorizacion-procedimiento-examen/pdf/20
+        name: PDF
+        meta:
+          id: req_3e7c751959944c9ebb4488cef431e040
+          created: 1745944570130
+          modified: 1749928394889
+          isPrivate: false
+          description: ""
+          sortKey: -1745944570130
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: Auth
+    meta:
+      id: fld_adab4be309b044d795a3fd464ce860e9
+      created: 1746282301801
+      modified: 1748696875776
+      sortKey: -1746282301801
+      description: ""
+    children:
+      - url: http://localhost:3000/api/auth
+        name: LOGIN
+        meta:
+          id: req_8f77d30dc6704c2db30ffd940c87b46e
+          created: 1746282304521
+          modified: 1746446454281
+          isPrivate: false
+          description: ""
+          sortKey: -1746282304521
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "idauth": "auth0|marco789"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: DeepSeek
+    meta:
+      id: fld_792866d9fea04708b01550993ea61863
+      created: 1747501255661
+      modified: 1747501255661
+      sortKey: -1747501255661
+      description: ""
+    children:
+      - url: http://localhost:3000/api/chat
+        name: New Request
+        meta:
+          id: req_ebc33aa16f0a436fa4766683b2f9a4ae
+          created: 1747501258406
+          modified: 1749329340238
+          isPrivate: false
+          description: ""
+          sortKey: -1747501258406
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"sintomas": "dolor en el oido",
+            	"nombre_paciente": "Mauricio",
+            	"edad": "24",
+            	"sexo": "Hombre",
+            	"Act_Fisica": "Bastante",
+            	"peso": "65",
+            	"estado_civil": "Soltero",
+            	"ocupacion": "Vago"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_ae1ab9a376ef46f69ee821fd99109fc7
+    created: 1745508139830
+    modified: 1745508139830
+environments:
+  name: Base Environment
+  meta:
+    id: env_5b3203fe4de84b3299cf6badffa51455
+    created: 1745508139828
+    modified: 1745508139828
+    isPrivate: false
