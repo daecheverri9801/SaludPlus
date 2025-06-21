@@ -24,7 +24,7 @@ Lista de software y herramientas que deben estar instalados antes de comenzar.
 Instalación paso a paso
 
 #Codigo#
-1. Clonar el repositorio: https://github.com/daecheverri9801/SistemaDiagnosticoEnfermedades cd SistemaDiagnosticoEnfermedades
+1. Clonar el repositorio: https://github.com/daecheverri9801/SaludPlus.git cd SistemaDiagnosticoEnfermedades
 
 #Base de Datos#
 1. Creación de la base de datos en Postgres con nombre "SistemaDiagnosticoEnfermedades".
