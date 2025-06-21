@@ -27,7 +27,7 @@ const obtenerPacientePorId = async (req, res) => {
 
 const crearPaciente = async (req, res) => {
   try {
-    const {usuario,nombre,cedula,correo_electronico,telefono,fecha_nacimiento,idauth,celular,direccion} = req.body
+    const {usuario,nombre,cedula,correo_electronico,telefono,idauth,celular,direccion} = req.body
 
     const paciente = new PacienteBuilder()
       .setUsuario(usuario)
@@ -35,7 +35,6 @@ const crearPaciente = async (req, res) => {
       .setCedula(cedula)
       .setCorreo(correo_electronico)
       .setTelefono(telefono)
-      .setFechaNacimiento(fecha_nacimiento)
       .setIdAuth(idauth)
       .setCelular(celular)
       .setDireccion(direccion)

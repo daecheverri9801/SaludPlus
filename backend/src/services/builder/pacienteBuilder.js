@@ -28,11 +28,6 @@ class PacienteBuilder {
         return this
     }
 
-    setFechaNacimiento(fechaNacimiento) {
-        this.paciente.fecha_nacimiento = fechaNacimiento
-        return this
-    }
-
     setIdAuth(idauth) {
         this.paciente.idauth = idauth
         return this

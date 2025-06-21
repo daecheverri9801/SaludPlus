@@ -32,23 +32,7 @@ function MenuMedico() {
       path: "/atencion",
       description: "Acceda a la atención médica",
       color: "#00b4d8",
-    },
-    {
-      id: 3,
-      title: "Autorización de Procedimientos",
-      icon: procedureIcon,
-      path: "/autorizacion-procedimientos",
-      description: "Gestione autorizaciones de procedimientos",
-      color: "#ff9800",
-    },
-    {
-      id: 4,
-      title: "Autorización de Medicamentos",
-      icon: medicationIcon,
-      path: "/autorizacion-medicamentos",
-      description: "Solicite autorizaciones para medicamentos",
-      color: "#4caf50",
-    },
+    }
   ];
 
   useEffect(() => {

@@ -126,7 +126,7 @@ function Scheduler() {
                 <td>
                   <button
                     onClick={() => handleAtenderCita(cita)}
-                    // disabled={!isAtenderEnabled(cita.fecha_cita)}
+                    disabled={!isAtenderEnabled(cita.fecha_cita)}
                   >
                     Atender Cita
                   </button>

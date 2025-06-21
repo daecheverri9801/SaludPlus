@@ -22,8 +22,8 @@ function Registro() {
     email: "",
     password: "",
     confirmPassword: "",
-    celular: "", 
-    direccion: "", 
+    celular: "",
+    direccion: "",
   };
 
   const { formData, handleChange, handleBlur, fieldErrors, setFieldErrors } =
@@ -83,6 +83,14 @@ function Registro() {
       setLoading(false);
       return;
     }
+    if (formData.password !== formData.confirmPassword) {
+      setFieldErrors({
+        ...newFieldErrors,
+        confirmPassword: "Las contraseñas no coinciden.",
+      });
+      setLoading(false);
+      return;
+    }
 
     try {
       // Verificar duplicados
@@ -119,7 +127,7 @@ function Registro() {
           email: formData.email,
           username: formData.username,
           nombre: formData.nombre,
-          cedula: formData.cedula
+          cedula: formData.cedula,
         },
       ]);
 
@@ -137,8 +145,8 @@ function Registro() {
         correo_electronico: formData.email,
         fecha_registro: new Date().toISOString(),
         idauth: userId,
-        celular: formData.celular, 
-        direccion: formData.direccion, 
+        celular: formData.celular,
+        direccion: formData.direccion,
       };
 
       const response = await fetch("http://localhost:3000/api/pacientes", {
@@ -151,6 +159,10 @@ function Registro() {
 
       if (!response.ok) {
         const errorText = await response.text();
+        if (authData.user) {
+          await client.auth.admin.deleteUser(authData.user.id);
+          await client.from("usuarios").delete().eq("id", authData.user.id);
+        }
         throw new Error("Error en la API del backend: " + errorText);
       }
 
