@@ -63,7 +63,8 @@ const getCitasPorPaciente = async (idPaciente) => {
         p.id_paciente AS id_paciente,
         p.nombre AS nombre_paciente, 
         m.id_medico AS id_medico,        
-        m.nombre AS nombre_medico
+        m.nombre AS nombre_medico,
+        m.especialidad
       FROM cita_medica cm
       INNER JOIN paciente p ON cm.id_paciente = p.id_paciente
       INNER JOIN medico m ON cm.id_medico = m.id_medico
