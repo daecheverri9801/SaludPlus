@@ -1,38 +1,35 @@
 const AutorizacionMedicamentoFacade = require('../services/facade/autorizacionMedicamentoFacade')
-const { generarPdfAutorizacionMedicamento, enviarPdfPorCorreo } = require('../services/autorizacionMedicamentoPdf')
-const fs = require('fs');
+const ExportarPDFAutorizacionMedicamentos = require('../services/reportes/strategies/autorizacionMedicamentoPdf')
+const fs = require('fs')
+const ReporteAutorizacionMedicamentos = require('../services/reportes/tipos/reporteAutorizacionMedicamentos')
+const ReporteService = require('../services/reportes/reporteService')
 
 const generarPdf = async (req, res) => {
-    const { idAutorizacion } = req.params;
+  const { idAutorizacion } = req.params
 
-    try {
-        const autorizaciones = await AutorizacionMedicamentoFacade.obtenerAutorizacionMedicamentoPorId(idAutorizacion)
+  try {
+    const autorizacion = await AutorizacionMedicamentoFacade.obtenerAutorizacionMedicamentoPorId(idAutorizacion)
 
-        if (!autorizaciones || autorizaciones.length === 0) {
-            return res.status(404).json({ mensaje: 'No se encontró autorización para este paciente.' })
-        }
+    console.log(autorizacion)
 
-        const autorizacion = autorizaciones[0]
-
-        const pdfPath = await generarPdfAutorizacionMedicamento({
-            nombrePaciente: autorizacion.nombre_paciente || 'Paciente desconocido',
-            nombreMedico: autorizacion.nombre_medico || 'Médico desconocido',
-            idConsulta: autorizacion.id_consulta,
-            medicamento: autorizacion.medicamento,
-            dosis: autorizacion.dosis,
-            frecuencia: autorizacion.frecuencia,
-            duracion: autorizacion.duracion,
-            fechaEmision: autorizacion.fecha_emision,
-            fechaExpiracion: autorizacion.fecha_expiracion,
-            justificacion: autorizacion.justificacion,
-            estado: autorizacion.estado
-        });
-
-        res.download(pdfPath)
-    } catch (error) {
-        console.error(error)
-        res.status(500).json({ mensaje: 'Error al generar el PDF de Autorización.' })
+    if (!autorizacion) {
+      return res.status(404).json({ mensaje: 'No se encontró incapacidad para este ID.' })
     }
+
+    const reporte = new ReporteAutorizacionMedicamentos(autorizacion[0])
+    console.log("reporte desde controller", reporte)
+    const estrategia = new ExportarPDFAutorizacionMedicamentos()
+    console.log("estrategia desde controller", estrategia)
+
+    const servicio = new ReporteService(reporte, estrategia)
+    console.log("servicio", servicio.reporte)
+    const filePath = await servicio.generar()
+
+    res.download(filePath)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ mensaje: 'Error al generar el PDF de incapacidad médica' })
+  }
 }
 
 
@@ -43,13 +40,13 @@ const obtenerAutorizacionMedicamento = async (req, res) => {
         const Autorizacion = await AutorizacionMedicamentoFacade.obtenerAutorizacionMedicamentoPorPaciente(id)
 
         if (!Autorizacion || Autorizacion.length === 0) {
-            return res.status(404).json({ mensaje: 'No hay autorizaciones activas para el paciente o ya expiraron.' });
+            return res.status(404).json({ mensaje: 'No hay autorizaciones activas para el paciente o ya expiraron.' })
         }
 
         res.json(Autorizacion)
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al obtener Autorizacion clínico' });
+        res.status(500).json({ mensaje: 'Error al obtener Autorizacion clínico' })
     }
 }
 
@@ -60,7 +57,7 @@ const crearAutorizacion = async (req, res) => {
     try {
         const nuevoAutorizacion = await AutorizacionMedicamentoFacade.crearAutorizacionMedicamento(id_paciente, id_medico, id_consulta, medicamento, dosis, 
             frecuencia, duracion, fecha_expiracion, justificacion, estado)
-        res.status(201).json(nuevoAutorizacion);
+        res.status(201).json(nuevoAutorizacion)
     } catch (error) {
         console.error(error)
         res.status(500).json({ mensaje: 'Error al crear Autorizacion clínico' })

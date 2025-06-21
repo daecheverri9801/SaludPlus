@@ -23,7 +23,7 @@ const obtenerAutorizacionPorPaciente = async (idPaciente) => {
         ORDER BY am.fecha_emision DESC`,
         [idPaciente]
     )
-    return resultado.rows
+    return resultado.rows[0]
 }
 
 const obtenerAutorizacionPorId = async (idAutorizacion) => {

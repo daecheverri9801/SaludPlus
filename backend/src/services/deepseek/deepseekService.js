@@ -1,72 +1,24 @@
-const { OLLAMA_URL } = require("../../config/ollamaConfig");
-const DeepSeekClient = require("./client");
+const DeepSeekClient = require('./client')
+const OllamaAdapter = require('../adapter/ollamaAdapter')
 
-const generarRespuesta = async (
-  sintomas,
-  id_paciente,
-  nombre_paciente,
-  edad,
-  sexo,
-  Act_Fisica,
-  peso,
-  estado_civil,
-  ocupacion
-) => {
-  const prompt = `
-Eres un médico general. Según los síntomas del paciente, debes generar un diagnóstico en formato JSON.
-Sigue exactamente esta estructura. Aquí tienes un ejemplo pero usa el nombre y edad del paciente que te de mandan en los parametros :
+const ollamaAdapter = new OllamaAdapter(DeepSeekClient)
 
-{
-  "paciente": {
-    "id": "${id_paciente}",
-    "nombre": "${nombre_paciente}",
-    "años": ${edad},
-    "genero": "${sexo}"
-  },
-  "diagnosticos": {
-    "fecha": "2025-05-05",
-    "condicion": "Faringitis viral",
-    "sintomas": ["Dolor de garganta", "Fiebre", "Congestión nasal"],
-    "recomendacion": {
-      "medicamentos": [
-        {
-          "nombre": "Paracetamol",
-          "dosis": "500 mg",
-          "frecuencia": "Cada 8 horas"
-        },
-        {
-          "nombre": "Loratadina",
-          "dosis": "10 mg",
-          "frecuencia": "Cada 12 horas"
-        }
-      ],
-      "incapacidad": "Reposo por 3 días"
-    }
-  }
+const generarRespuesta = async (...args) => {
+  const params = {
+    sintomas: args[0],
+    id_paciente: args[1],
+    nombre_paciente: args[2],
+    edad: args[3],
+    sexo: args[4],
+    Act_Fisica: args[5],
+    peso: args[6],
+    estado_civil: args[7],
+    ocupacion: args[8]
+  };
+  return await ollamaAdapter.obtenerDiagnostico(params, 'llama3.2:latest')
 }
 
-Ahora genera un JSON igual para el siguiente paciente:
-
-
-    Sintomas = ${sintomas}
-    datos del paciente :
-      ${id_paciente},
-      ${nombre_paciente},
-      ${edad},
-      ${sexo},
-      ${Act_Fisica},
-      ${peso},
-      ${estado_civil},
-      ${ocupacion}X
-
-Responde solo con el JSON.
-`;
-
-  console.log("\n🔍 Prompt generado:\n", prompt);
-
-  return await DeepSeekClient.generarRespuesta(prompt);
-};
-
 module.exports = {
-  generarRespuesta,
-};
+  generarRespuesta
+}
+

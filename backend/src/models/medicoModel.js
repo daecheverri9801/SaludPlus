@@ -11,8 +11,8 @@ const crearMedico = async ( medico ) => {
 }
 
 const obtenerMedicos = async () => {
-    const result = await db.query(`SELECT * FROM Medico`);
-    return result.rows;
+    const result = await db.query(`SELECT * FROM Medico`)
+    return result.rows
 }
 
 const obtenerMedicoPorId = async (id) => {
