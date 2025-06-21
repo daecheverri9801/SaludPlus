@@ -12,6 +12,6 @@ router.delete('/:idIncapacidad', controller.eliminarIncapacidadMedica)
 
 router.post('/enviar-correo/:id', controller.enviarIncapacidadPorCorreo)
 
-router.post('/pdf/:idIncapacidad', controller.generarPdf);
+router.post('/pdf/:idIncapacidad', controller.generarPdf)
 
 module.exports = router 

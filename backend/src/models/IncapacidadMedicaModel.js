@@ -21,7 +21,7 @@ const obtenerIncapacidadesPorId = async (idIncapacidad) => {
     FROM incapacidad_medica im
     INNER JOIN paciente p ON im.id_paciente = p.id_paciente
     INNER JOIN medico m ON im.id_medico = m.id_medico
-    WHERE im.id_incapacidad = $1 AND fecha_fin >= NOW()
+    WHERE im.id_incapacidad = $1
     ORDER BY im.fecha_emision DESC`,
         [idIncapacidad]
     )
@@ -62,5 +62,5 @@ module.exports = {
     actualizarIncapacidadMedica,
     eliminarIncapacidadMedica,
     obtenerIncapacidadesPorId
-};
+}
 

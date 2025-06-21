@@ -10,6 +10,6 @@ router.put('/:idConsulta', controller.actualizarAutorizacionProcedimientoExamen)
 
 router.delete('/:idAutorizacion', controller.eliminarAutorizacionProcedimientoExamenes)
 
-router.post('/pdf/:idAutorizacion', controller.generarPdf);
+router.post('/pdf/:idAutorizacion', controller.generarPdf)
 
 module.exports = router

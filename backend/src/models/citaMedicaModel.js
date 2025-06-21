@@ -9,12 +9,12 @@ const getCitas = async (req, res) => {
       INNER JOIN medico m ON cm.id_medico = m.id_medico
       ORDER BY cm.fecha_cita ASC
     `);
-    return resultado.rows;
+    return resultado.rows
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensaje: "Error al obtener las citas médicas" });
+    console.error(error)
+    res.status(500).json({ mensaje: "Error al obtener las citas médicas" })
   }
-};
+}
 
 const getCitasPorMedicoYFecha = async (idMedico, fechaYYYYMMDD) => {
   const result = await pool.query(
@@ -25,10 +25,10 @@ const getCitasPorMedicoYFecha = async (idMedico, fechaYYYYMMDD) => {
       AND DATE(fecha_cita) = $2
   `,
     [idMedico, fechaYYYYMMDD]
-  );
+  )
 
-  return result.rows.map((r) => new Date(r.fecha_cita));
-};
+  return result.rows.map((r) => new Date(r.fecha_cita))
+}
 
 const getCitasPorMedico = async (idMedico) => {
   try {
@@ -47,12 +47,12 @@ const getCitasPorMedico = async (idMedico) => {
       [idMedico]
     );
 
-    return resultado.rows;
+    return resultado.rows
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensaje: "Error al obtener las citas del médico" });
+    console.error(error)
+    res.status(500).json({ mensaje: "Error al obtener las citas del médico" })
   }
-};
+}
 
 const getCitasPorPaciente = async (idPaciente) => {
   try {
@@ -90,10 +90,10 @@ const crearCita = async (id_paciente, id_medico, fecha_cita, motivo) => {
       AND fecha_cita = $2
   `,
     [id_medico, fecha_cita]
-  );
+  )
 
   if (conflictoDeHorarios.rowCount > 0) {
-    throw new Error("El médico ya tiene una cita en ese horario.");
+    throw new Error("El médico ya tiene una cita en ese horario.")
   }
 
   const result = await pool.query(
@@ -103,13 +103,13 @@ const crearCita = async (id_paciente, id_medico, fecha_cita, motivo) => {
     RETURNING *
   `,
     [id_paciente, id_medico, fecha_cita, motivo]
-  );
-  return result.rows[0];
-};
+  )
+  return result.rows[0]
+}
 
 const actualizarCita = async (req, res) => {
-  const { id } = req.params;
-  const { fecha_cita, motivo, estado } = req.body;
+  const { id } = req.params
+  const { fecha_cita, motivo, estado } = req.body
   try {
     const result = await pool.query(
       `
@@ -119,28 +119,28 @@ const actualizarCita = async (req, res) => {
       RETURNING *
     `,
       [fecha_cita, motivo, estado, id]
-    );
+    )
     if (result.rowCount === 0)
-      return res.status(404).json({ mensaje: "Cita no encontrada" });
-    res.json(result.rows[0]);
+      return res.status(404).json({ mensaje: "Cita no encontrada" })
+    res.json(result.rows[0])
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensaje: "Error al actualizar la cita médica" });
+    console.error(error)
+    res.status(500).json({ mensaje: "Error al actualizar la cita médica" })
   }
-};
+}
 
 const eliminarCita = async (id) => {
   try {
     const result = await pool.query(
       "DELETE FROM cita_medica WHERE id_cita = $1",
       [id]
-    );
+    )
     if (result.rowCount === 0)
-      return res.status(404).json({ mensaje: "Cita no encontrada" });
+      return res.status(404).json({ mensaje: "Cita no encontrada" })
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-};
+}
 
 module.exports = {
   getCitas,
@@ -150,4 +150,4 @@ module.exports = {
   eliminarCita,
   getCitasPorPaciente,
   getCitasPorMedicoYFecha,
-};
+}

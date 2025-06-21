@@ -11,19 +11,19 @@ const crearHistorial = async (idPaciente, idMedico, motivo, observaciones, codig
 
 const obtenerHistorialPorPaciente = async (idPaciente) => {
     try {
-        const historial = await HistorialClinicoModel.obtenerHistorialPorPaciente(idPaciente);
+        const historial = await HistorialClinicoModel.obtenerHistorialPorPaciente(idPaciente)
         if (!historial || historial.length === 0) {
             throw new Error('No se encontró historial para este paciente')
         }
         return historial
     } catch (error) {
-        throw new Error('Error al obtener historial clínico', error.message);   
+        throw new Error('Error al obtener historial clínico', error.message) 
     }
 }
 
 const obtenerHistorialPorId = async (idPaciente, idHistorial) => {
     try {
-        const historial = await HistorialClinicoModel.obtenerHistorialPorId(idPaciente, idHistorial);
+        const historial = await HistorialClinicoModel.obtenerHistorialPorId(idPaciente, idHistorial)
         if (!historial || historial.length === 0) {
             throw new Error('No se encontró historial con este ID')
         }

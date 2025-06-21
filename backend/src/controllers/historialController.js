@@ -7,13 +7,13 @@ const obtenerHistorial = async (req, res) => {
         const historial = await HistorialFacade.obtenerHistorialPorPaciente(id)
 
         if (!historial || historial.length === 0) {
-            return res.status(404).json({ mensaje: 'No se encontró historial para este paciente.' });
+            return res.status(404).json({ mensaje: 'No se encontró historial para este paciente.' })
         }
 
         res.json(historial)
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al obtener historial clínico', error: error.message });
+        res.status(500).json({ mensaje: 'Error al obtener historial clínico', error: error.message })
     }
 }
 
@@ -24,13 +24,13 @@ const obtenerHistorialId = async (req, res) => {
         const historial = await HistorialFacade.obtenerHistorialPorId(idPaciente, idHistorial)
 
         if (!historial || historial.length === 0) {
-            return res.status(404).json({ mensaje: 'No se encontró historial para este paciente.' });
+            return res.status(404).json({ mensaje: 'No se encontró historial para este paciente.' })
         }
 
         res.json(historial)
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al obtener historial clínico controller' });
+        res.status(500).json({ mensaje: 'Error al obtener historial clínico controller' })
     }
 }
 
